@@ -56,6 +56,43 @@ requirements are a leading cause of project failure.
 
 ---
 
+## Traceability
+
+Everything in this repository hangs off one chain. Each link is verifiable, so no
+requirement exists without a customer need behind it and no screen exists without a
+requirement behind it.
+
+```
+Lily (interview)
+   └─► User story        US-01 … US-30
+          └─► Requirement   FR-01 … FR-27  ·  NFR-01 … NFR-08
+                 └─► Screen   01-home … 07-confirmation
+```
+
+- **Interview → stories.** Every story traces to something Lily raised. No requirement
+  was invented beyond what the interview supported.
+- **Story → requirement.** The mapping is held in
+  [`traceability-matrix.xlsx`](docs/requirements/traceability-matrix.xlsx), which also
+  records requirement type and the screen each one is realised in.
+- **Requirement → screen.** Each annotated screen cites the requirements it addresses,
+  so the design is auditable against the specification.
+
+**Coverage.** All 30 user stories map to at least one requirement and to a screen — no
+story is orphaned. All 27 functional requirements appear in the matrix.
+
+Two non-functional requirements are also mapped to specific stories: **NFR-05**
+(authentication and role-based access) and **NFR-06** (privacy and data protection).
+The remaining six — NFR-01 to NFR-04 (performance and consistency) and NFR-07 to NFR-08
+(accessibility, hosting and backups) — are system-level constraints rather than outcomes
+of any single user story, so they are specified without a story parent.
+
+Eight open questions from the interview were carried forward and deliberately left
+unresolved rather than assigned invented values. Where they affect a requirement, that
+requirement states the gap explicitly — see NFR-08, where backup frequency, retention and
+recovery targets remain open.
+
+---
+
 ## Repository structure
 
 ```
@@ -119,6 +156,38 @@ lilys-florist/
 | Cart | [`05-cart-annotated.png`](docs/design/annotated-screens/05-cart-annotated.png) |
 | Checkout | [`06-checkout-annotated.png`](docs/design/annotated-screens/06-checkout-annotated.png) |
 | Confirmation | [`07-confirmation-annotated.png`](docs/design/annotated-screens/07-confirmation-annotated.png) |
+
+---
+
+## Requirements coverage
+
+A self-assessment against the project rubric, pointing to where each criterion is
+evidenced.
+
+| Criterion | Evidence |
+| --- | --- |
+| 15+ user stories | 30 stories, US-01 – US-30 — [`user-stories.md`](docs/requirements/user-stories.md) |
+| Multiple user types | 7 roles: Guest, Returning Customer, Customer, AI Support, Staff, Manager, Owner/Admin |
+| AI-related user stories | US-11 – US-15 — AI Q&A, recommendations, cart assistance, bilingual EN/IE, escalation to staff |
+| User journey | Persona, scenario, goal, 11-step happy path — [`user-journey.md`](docs/ux/user-journey.md) |
+| Alternative and error paths | 3 alternative paths + 3 failure scenarios (payment failure, unconfirmed status, failed delivery) |
+| 20+ requirements | 35 total: FR-01 – FR-27 and NFR-01 – NFR-08 |
+| Functional requirements | [`functional-requirements.md`](docs/requirements/functional-requirements.md) |
+| Non-functional requirements | [`non-functional-requirements.md`](docs/requirements/non-functional-requirements.md) |
+| Numbered and categorised | Every requirement carries an ID and a functional/non-functional classification |
+| Quantifiable / testable | NFR-01 ≈2s page load, NFR-02 ≈3s checkout, NFR-03 100+ orders/day, NFR-05 lockout after failed attempts |
+| Traceability | [`traceability-matrix.xlsx`](docs/requirements/traceability-matrix.xlsx) — US → FR/NFR → screen |
+| Mockups / wireframes | 7 annotated screens — [`annotated-screens/`](docs/design/annotated-screens/) |
+| Annotations with design rationale | Each screen annotates its elements and cites the requirements they satisfy |
+| AI-enabled customer support in requirements | FR-11 – FR-16 |
+| Final document ≥ 4 pages | [`Lily_Florist_AI_Project_FINAL.pdf`](deliverables/Lily_Florist_AI_Project_FINAL.pdf) |
+| Interview link | [Interview with Lily — 24 September 2026](https://chatgpt.com/share/6ab583cf-a810-83eb-987c-9f6593724535) |
+
+**On story count.** The brief asks for 15+. This project documents 30. The extra
+stories exist to keep traceability for functional findings from the interview that
+would otherwise have been merged or lost — splitting them keeps each independently
+actionable and individually traceable. Coverage and rationale are recorded in
+[`user-stories.md`](docs/requirements/user-stories.md).
 
 ---
 
