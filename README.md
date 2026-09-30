@@ -51,6 +51,9 @@ The emphasis is on turning ambiguous customer intent into requirements that are
 unambiguous, quantifiable, categorised, and verifiable — since poorly specified
 requirements are a leading cause of project failure.
 
+**Requirements gathering record:**
+[Interview with Lily — 24 September 2026](https://chatgpt.com/share/6ab583cf-a810-83eb-987c-9f6593724535)
+
 ---
 
 ## Repository structure
@@ -88,28 +91,57 @@ lilys-florist/
 
 ---
 
+## Documentation map
+
+### Requirements
+
+| Document | Contents |
+| --- | --- |
+| [`user-stories.md`](docs/requirements/user-stories.md) | 30 user stories (US-01 – US-30) across 7 user roles |
+| [`functional-requirements.md`](docs/requirements/functional-requirements.md) | 27 functional requirements (FR-01 – FR-27) |
+| [`non-functional-requirements.md`](docs/requirements/non-functional-requirements.md) | 8 non-functional requirements (NFR-01 – NFR-08) |
+| [`traceability-matrix.xlsx`](docs/requirements/traceability-matrix.xlsx) | Traceability from requirements back to user stories |
+
+### UX
+
+| Document | Contents |
+| --- | --- |
+| [`user-journey.md`](docs/ux/user-journey.md) | Persona, scenario, happy path, 3 alternative paths, 3 failure scenarios, AI interaction points |
+
+### Design
+
+| Screen | File |
+| --- | --- |
+| Home | [`01-home-annotated.png`](docs/design/annotated-screens/01-home-annotated.png) |
+| Product search | [`02-product-search-annotated.png`](docs/design/annotated-screens/02-product-search-annotated.png) |
+| AI assistant | [`03-ai-assistant-annotated.png`](docs/design/annotated-screens/03-ai-assistant-annotated.png) |
+| Product details | [`04-product-details-annotated.png`](docs/design/annotated-screens/04-product-details-annotated.png) |
+| Cart | [`05-cart-annotated.png`](docs/design/annotated-screens/05-cart-annotated.png) |
+| Checkout | [`06-checkout-annotated.png`](docs/design/annotated-screens/06-checkout-annotated.png) |
+| Confirmation | [`07-confirmation-annotated.png`](docs/design/annotated-screens/07-confirmation-annotated.png) |
+
+---
+
 ## Deliverable
 
 | Document | Location |
 | --- | --- |
-| Final project report (PDF) | [`deliverables/Lily_Florist_AI_Project_FINAL.pdf`](deliverables/) |
-
----
-
-## Documentation map
-
-| Area | Documents |
-| --- | --- |
-| Requirements | [`user-stories.md`](docs/requirements/), [`functional-requirements.md`](docs/requirements/), [`non-functional-requirements.md`](docs/requirements/), [`traceability-matrix.xlsx`](docs/requirements/) |
-| UX | [`user-journey.md`](docs/ux/) |
-| Design | [`annotated-screens/`](docs/design/annotated-screens/) |
+| Final project report (PDF) | [`deliverables/Lily_Florist_AI_Project_FINAL.pdf`](deliverables/Lily_Florist_AI_Project_FINAL.pdf) |
 
 ---
 
 ## Status
 
-Documentation in progress. Folders and files are placeholders until the
-corresponding artefacts are added.
+Complete. Requirements, user journey, traceability matrix, annotated wireframes and
+the final report are all included.
+
+---
+
+## Notes
+
+The `.docx` originals are preserved in the local working copy; the documents here are
+Markdown conversions. Previous document versions are kept outside this repository in a
+local archive folder.
 
 ---
 
